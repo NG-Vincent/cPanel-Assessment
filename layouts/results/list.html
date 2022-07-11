@@ -1,0 +1,25 @@
+{{/* This layout is based on the "list" template from the ananke theme, with some modifications as marked with the comments */}}
+{{ define "main" }}
+  <article class="pa3 pa4-ns nested-copy-line-height">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy {{ $.Param "text_color" | default "mid-gray" }}">
+      <p>Displaying search results for "asdf"</p>
+    </section>
+    <section class="flex-ns flex-wrap justify-around mt5">
+      {{/* Split search query (lowercase) into array */}}
+      {{ $searchQuery := (split ("chicken sandwich" | lower) " ") }}
+      
+      {{/* Iterate through search results */}}
+      {{range .Site.RegularPages }}
+        {{/* check if any word in search query matches any word in page title */}}
+        {{ if intersect $searchQuery (split (.Title | lower) " ") }}
+          <div class="relative w-100 w-30-l mb4 bg-white">
+            {{ .Render "summary-with-image" }}
+          </div>
+        {{ end }}
+      {{ end }}
+    </section>
+  </article>
+
+  {{ $built := resources.Get "js/searchFilter.js" }}
+  <script type="text/javascript" src="{{ $built.RelPermalink }}"></script>
+{{ end }}

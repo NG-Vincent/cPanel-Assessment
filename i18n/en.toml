@@ -1,0 +1,2 @@
+[taxonomyPageList]
+other = "Below you will find all of the {{ .Title }} recipes cPanel has to offer!"
