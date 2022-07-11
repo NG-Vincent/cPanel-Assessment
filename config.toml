@@ -3,6 +3,7 @@ baseURL = "https://ng-vincent.github.io/cPanel-Assessment"
 languageCode = "en-us"
 theme = "ananke"
 resourceDir = "../resources"
+copyright = "Vincent Nguyen"
 
 DefaultContentLanguage = "en"
 Paginate = 9
@@ -32,4 +33,4 @@ summaryLength = 24
 
 [[params.ananke_socials]]
 name = "github"
-url = "https://github.com/NG-Vincent"
+url = "https://github.com/NG-Vincent/cPanel-Assessment"
