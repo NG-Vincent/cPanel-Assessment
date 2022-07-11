@@ -1,5 +1,5 @@
 title = "cPanel's Favorite Recipes"
-baseURL = "https://NG-Vincent.github.io/cPanel-Assessment"
+baseURL = "https://ng-vincent.github.io/cPanel-Assessment"
 languageCode = "en-us"
 theme = "ananke"
 resourceDir = "../resources"
