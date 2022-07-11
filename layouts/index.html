@@ -1,8 +1,10 @@
+{{/* This layout is based on the template from the ananke theme, with some modifications as marked with the comments */}}
 {{ define "main" }}
 <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy {{ $.Param "text_color" | default "mid-gray" }}">
     {{ .Content }}
   </article>
 
+  {{/* add search form */}}
   <div class="pa3 pa4-ns w-100 w-60-ns center">
     <form id="search-form" action="submit">
       <input id="search-input" class="w-100 pa2 br2" placeholder="Search for a recipe" />
@@ -10,6 +12,7 @@
     </form>
   </div>
 
+  {{/* show links to categories */}}
   <section class="pa3 pa4-ns w-100 w-70-ns center">
     <div class="flex-ns flex-wrap justify-around mt5">
       {{ range .Site.Taxonomies.categories }}

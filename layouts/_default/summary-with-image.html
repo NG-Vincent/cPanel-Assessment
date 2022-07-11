@@ -1,9 +1,10 @@
+{{/* This layout is based on the template from the ananke theme, with some modifications as marked with the comments */}}
 {{ $featured_image := partial "func/GetFeaturedImage.html" . }}
+{{/* remove unnecessary border */}}
 <article>
   <div class="db pv3 ph3 no-underline dark-gray">
     <div class="flex flex-column flex-row-ns">
       {{ if $featured_image }}
-          {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
         <div class="{{ cond (eq $.Site.Language.LanguageDirection "rtl") "pl3-ns" "pr3-ns" }} mb4 mb0-ns w-100 w-40-ns">
           <a href="{{.RelPermalink}}" class="db grow">
             <img src="{{ $featured_image }}" class="img" alt="image from {{ .Title }}">
@@ -19,9 +20,8 @@
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
           {{ .Summary }}
         </div>
+          {{/* add "shadow-hover" class */}}
           <a href="{{.RelPermalink}}" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1 shadow-hover">{{ $.Param "read_more_copy" | default (i18n "readMore") }}</a>
-        {{/* TODO: add author
-        <p class="f6 lh-copy mv0">By {{ .Author }}</p> */}}
       </div>
     </div>
   </div>

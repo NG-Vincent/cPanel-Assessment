@@ -1,5 +1,7 @@
+{{/* This layout is based on the template from the ananke theme, with some modifications as marked with the comments */}}
 {{ define "main" }}
   <article class="cf pa3 pa4-m pa4-l">
+    {{/* center-align text. added content section */}}
     <div class="measure-wide-l tc center f4 lh-copy nested-copy-line-height nested-links {{ $.Param "text_color" | default "mid-gray" }}">
       {{ .Content }}
       <p>{{ i18n "taxonomyPageList" . }}</p>
